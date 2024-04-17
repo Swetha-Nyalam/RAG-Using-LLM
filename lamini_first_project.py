@@ -125,7 +125,7 @@ class QueryEmbedding:
         return query_embedding
 
 
-class pairwise_bubbleSort_Comparator:
+class PairwiseBubbleSortComparator:
 
     # ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -224,7 +224,7 @@ class pairwise_bubbleSort_Comparator:
         return self.split_texts
 
 
-class answer_query:
+class RagRunner:
 
     def __init__(self, query: str):
         self.query = query
@@ -238,7 +238,7 @@ class answer_query:
 
             "query_output": "str"
         }
-        topNTextsClass = pairwise_bubbleSort_Comparator(
+        topNTextsClass = PairwiseBubbleSortComparator(
             self.NmostRelevantTexts)
         priority_split_texts = topNTextsClass.topNTexts()
         mostRelevantTranscript = ""
@@ -256,7 +256,7 @@ class answer_query:
                     return value
 
 
-instance = answer_query(
+instance = RagRunner(
     "What was the year-to-date sales growth for ADAS in Q3")
 answer = instance.llm_query_output()
 print(answer)
