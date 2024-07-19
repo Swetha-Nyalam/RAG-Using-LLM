@@ -6,7 +6,7 @@ from lamini import LlamaV2Runner
 import os
 
 
-lamini.api_key = "36e55ad688aa487b9d5a086b8014b5fa"
+lamini.api_key = ""
 llm = lamini.Lamini("meta-llama/Llama-2-7b-chat-hf")
 
 
